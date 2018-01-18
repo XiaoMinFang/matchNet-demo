@@ -92,7 +92,8 @@ def main():
     total = len(interest)
     processed = 0
     for i, metadata in enumerate(interest):
-        datum = caffe_pb2.Datum()
+        print ("***********i = %d\n"%i)
+	datum = caffe_pb2.Datum()
         datum.channels, datum.height, datum.width = (1, 64, 64)
 
         # Extract the patch

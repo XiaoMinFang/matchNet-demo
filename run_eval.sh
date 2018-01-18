@@ -7,8 +7,8 @@ BASE_DIR=./
 DATA_DIR= /media/impoweralgo9/soft-data/matchnet/data
 MODEL_DIR=$BASE_DIR/models
 MODEL_NAME="${TRAIN_DATASET}_r_0.01_m_0"
-TEST_DB=/media/impoweralgo9/soft-data/matchnet/data/leveldb/${TEST_DATASET}.leveldb
-TEST_PAIR=/media/impoweralgo9/soft-data/matchnet/data/${TEST_DATASET}/m50_100000_100000_0.txt
+TEST_DB=/home/impoweralgo9/deeplearning/caffe/matchnet/data/${TEST_DATASET}.leveldb
+TEST_PAIR=/home/impoweralgo9/deeplearning/caffe/matchnet/data/${TEST_DATASET}/m50_256_256_0.txt
 OUTPUT=/tmp/predictions.txt
 
 python evaluate_matchnet.py \

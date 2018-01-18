@@ -66,6 +66,7 @@ def ReadPatches(db, pairs, patch_height=64, patch_width=64):
     Two N * 1 * W * H array in a list, where N is the number of pairs.
     """
     N = len(pairs)
+    print "*********N = %d\n"%N
     patches = [np.zeros((N, 1, patch_height, patch_width),
                         dtype=np.float),
                np.zeros((N, 1, patch_height, patch_width),
@@ -75,6 +76,7 @@ def ReadPatches(db, pairs, patch_height=64, patch_width=64):
     for pair in pairs:
         for key in pair:
             datum = caffe_pb2.Datum()
+	    #print "########key={}\n".format(key)
             datum.ParseFromString(db.Get(key))
             patches[parity][idx, 0, :, :] = \
                 np.fromstring(datum.data, np.uint8).reshape(
